@@ -4,7 +4,7 @@ import os
 dir=os.getcwd()
 class rotors():
     def __init__(self,rotor,offset):
-        self.offset = offset
+        self.offset=offset
         for i in range(offset):
             rotor.insert(0,rotor.pop())
         self.rotor=rotor
@@ -16,25 +16,25 @@ class rotors():
     def right(self,node):
         while node<=-len(self.rotor):
             node-=-len(self.rotor)
-        node += self.rotor[node][0]
+        node+=self.rotor[node][0]
         return node
     def shift(self):
-        self.offset = (self.offset + 1) % len(self.rotor)
+        self.offset=(self.offset + 1) % len(self.rotor)
         self.rotor.insert(0, self.rotor.pop())
     def get_offset(self):
         alphalist=[chr(i) for i in range(97,97+len(self.rotor))]
         return (alphalist[self.offset])
     def randrotor(n):
-        nodes = list(range(n))
-        spinwheel = [[1, 1] for i in range(n)]
+        nodes=list(range(n))
+        spinwheel=[[1, 1] for i in range(n)]
         for i in range(n):
-            node = rd.choice(nodes)
+            node=rd.choice(nodes)
             nodes.remove(node)
-            move1 = node - i
-            if move1 > 0:
-                move1 = move1 - n
-            spinwheel[i][1] = move1
-            spinwheel[i + move1][0] = -n - move1
+            move1=node-i
+            if move1>0:
+                move1=move1-n
+            spinwheel[i][1]=move1
+            spinwheel[i+move1][0]=-n-move1
         return spinwheel
 
 
@@ -69,7 +69,7 @@ class reflectors():
         if n//2>13:
             return None
         lines=[]
-        nodes = [j for j in range(0,n)]
+        nodes=[j for j in range(0,n)]
         for i in range(n//2):
             line=rd.sample(nodes,k=2)
             lines.append(line)
@@ -100,7 +100,7 @@ def randsetup(filename):
 
 def readsetup(filename):
     global dir
-    path = fr'{dir}\data\{filename}.txt'
+    path=fr'{dir}\data\{filename}.txt'
     setupfile=open(path,'r')
     data=ast.literal_eval(setupfile.read())
     setupfile.close()

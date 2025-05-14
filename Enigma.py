@@ -97,7 +97,7 @@ def randsetup(filename):
 
 
 def readsetup(filename):
-    path = fr'\pyprogram\data\{filename}.txt'
+    path = fr'\Enigma\data\{filename}.txt'
     setupfile=open(path,'r')
     data=ast.literal_eval(setupfile.read())
     setupfile.close()

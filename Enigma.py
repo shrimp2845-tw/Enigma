@@ -1,6 +1,7 @@
 import random as rd
 import ast
 import os
+dir=os.getcwd()
 class rotors():
     def __init__(self,rotor,offset):
         self.offset = offset
@@ -84,12 +85,13 @@ class reflectors():
 
 
 def randsetup(filename):
+    global dir
     setup=[]
     for i in range(3):
         setup.append(rotors.randrotor(26))
     setup.append(reflectors.randreflector(26))
     setup.append(plugboards.randplugboard(26,6))
-    path=fr'\Enigma\data\{filename}.txt'
+    path=fr'{dir}\data\{filename}.txt'
     setupfile=open(path,"w")
     setupfile.write(str(setup))
     setupfile.close()
@@ -97,7 +99,8 @@ def randsetup(filename):
 
 
 def readsetup(filename):
-    path = fr'\Enigma\data\{filename}.txt'
+    global dir
+    path = fr'\{dir}\data\{filename}.txt'
     setupfile=open(path,'r')
     data=ast.literal_eval(setupfile.read())
     setupfile.close()
@@ -105,8 +108,9 @@ def readsetup(filename):
 
 
 def originalengima():
+    global dir
     filename=input('Please enter your setup file name:')
-    path=fr'\Enigma\data\{filename}.txt'
+    path=fr'\{dir}\data\{filename}.txt'
     if not os.path.exists(path):
         print("File does not exist")
     else:

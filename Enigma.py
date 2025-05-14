@@ -89,7 +89,7 @@ def randsetup(filename):
         setup.append(rotors.randrotor(26))
     setup.append(reflectors.randreflector(26))
     setup.append(plugboards.randplugboard(26,6))
-    path=fr'\pyprogram\data\{filename}.txt'
+    path=fr'\Enigma\data\{filename}.txt'
     setupfile=open(path,"w")
     setupfile.write(str(setup))
     setupfile.close()
@@ -106,7 +106,7 @@ def readsetup(filename):
 
 def originalengima():
     filename=input('Please enter your setup file name:')
-    path=fr'\pyprogram\data\{filename}.txt'
+    path=fr'\Enigma\data\{filename}.txt'
     if not os.path.exists(path):
         print("File does not exist")
     else:

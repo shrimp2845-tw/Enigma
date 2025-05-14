@@ -141,7 +141,7 @@ def originalengima():
                 rotor2.shift()
             if count%(len_rotor*len_rotor)==0:
                 rotor3.shift()
-        print('Here is encrypted text:\n')
+        print('Here is encrypted text:')
         print(encrypttext)
 
 

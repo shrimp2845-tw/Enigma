@@ -100,7 +100,7 @@ def randsetup(filename):
 
 def readsetup(filename):
     global dir
-    path = fr'\{dir}\data\{filename}.txt'
+    path = fr'{dir}\data\{filename}.txt'
     setupfile=open(path,'r')
     data=ast.literal_eval(setupfile.read())
     setupfile.close()
@@ -110,7 +110,7 @@ def readsetup(filename):
 def originalengima():
     global dir
     filename=input('Please enter your setup file name:')
-    path=fr'\{dir}\data\{filename}.txt'
+    path=fr'{dir}\data\{filename}.txt'
     if not os.path.exists(path):
         print("File does not exist")
     else:

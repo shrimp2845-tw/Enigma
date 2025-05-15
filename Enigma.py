@@ -119,7 +119,7 @@ def originalengima():
     else:
         setup=readsetup(filename)
         rotor1,rotor2,rotor3,reflector,plugboard=setup
-        offset3,offset2,offset1=[ord(i)-97 for i in input("Please enter 3 offset for rotor (a~z):").split()]
+        offset3,offset2,offset1=[ord(i)-97 for i in input("Please enter 3 offset for rotor(such as abc,mei,qaq):")]
         rotor1=rotors(rotor1,offset1)
         rotor2=rotors(rotor2,offset2)
         rotor3=rotors(rotor3,offset3)

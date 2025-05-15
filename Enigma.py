@@ -24,6 +24,7 @@ class rotors():
     def get_offset(self):
         alphalist=[chr(i) for i in range(97,97+len(self.rotor))]
         return (alphalist[self.offset])
+    @staticmethod
     def randrotor(n):
         nodes=list(range(n))
         spinwheel=[[1, 1] for i in range(n)]
@@ -44,6 +45,7 @@ class plugboards():
         for i in l:
             self.plugboard[i[0]]=i[1]
             self.plugboard[i[1]]=i[0]
+    @staticmethod
     def randplugboard(n,m):
         if n//2>13:
             return None
@@ -65,6 +67,7 @@ class plugboards():
 class reflectors():
     def __init__(self,l):
         self.reflector=l
+    @staticmethod
     def randreflector(n):
         if n//2>13:
             return None

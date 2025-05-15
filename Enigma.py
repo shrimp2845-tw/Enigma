@@ -1,7 +1,7 @@
 import random as rd
 import ast
 import os
-dir=os.getcwd()
+dir=os.path.dirname(os.path.abspath(__file__))
 class rotors():
     def __init__(self,rotor,offset):
         self.offset=offset

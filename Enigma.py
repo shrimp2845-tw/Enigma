@@ -130,7 +130,7 @@ def originalengima():
         reflector=reflectors(reflector)
         plugboard=plugboards(plugboard)
         print('Setup done!')
-        print('Please enter your text below,only lower-case english character will be encrypted,Multiline input allowed:')
+        print('Please enter your text below,only lower-case english character will be encrypted,Multiline input allowed,empty row finished input:')
         lines=[]
         while 1:
             line=input()

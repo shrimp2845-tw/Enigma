@@ -114,6 +114,7 @@ def originalengima():
     global dir
     filename=input('Please enter your setup file name:')
     path=fr'{dir}\data\{filename}.txt'
+    print(f'Please check the path:{path}')
     if not os.path.exists(path):
         print("File does not exist")
     else:
@@ -131,13 +132,17 @@ def originalengima():
         count=0
         len_rotor=len(rotor1.rotor)
         for i in text:
-            step1=plugboard.pluged(i)
-            step2=rotor1.right(rotor2.right(rotor3.right(reflector.reflect(rotor3.left(rotor2.left(rotor1.left(ord(step1)-97)))))))
-            while step2<0:
-                step2+=len_rotor
-            step3=chr(97+step2)
-            step4=plugboard.pluged(step3)
-            encrypttext+=step4
+            alphalist = [chr(j) for j in range(97, 97+len_rotor)]
+            if i not in alphalist:
+                encrypttext+=i
+            else:
+                step1=plugboard.pluged(i)
+                step2=rotor1.right(rotor2.right(rotor3.right(reflector.reflect(rotor3.left(rotor2.left(rotor1.left(ord(step1)-97)))))))
+                while step2<0:
+                    step2+=len_rotor
+                step3=chr(97+step2)
+                step4=plugboard.pluged(step3)
+                encrypttext+=step4
             count+=1
             rotor1.shift()
             if count%len_rotor==0:
@@ -150,8 +155,8 @@ def originalengima():
 
 def main():
     originalengima()
+    input("----------press enter to exit----------")
 
 
 if __name__ == '__main__':
     main()
-

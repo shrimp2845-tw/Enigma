@@ -127,7 +127,7 @@ def originalengima():
         reflector=reflectors(reflector)
         plugboard=plugboards(plugboard)
         print('Setup done!')
-        text=input('Please enter your text,only lower-case english character allowed(no space):')
+        text=input('Please enter your text,only lower-case english character will be encrypted:')
         encrypttext=''
         count=0
         len_rotor=len(rotor1.rotor)

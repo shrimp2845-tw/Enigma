@@ -154,9 +154,11 @@ def originalengima():
 
 
 def main():
-    originalengima()
-    input("----------press enter to exit----------")
-
-
+    try:
+        originalengima()
+    except Exception as e:
+        print('ERROR:',e)
+    finally:
+        input('----------Press enter to exit----------')
 if __name__ == '__main__':
     main()

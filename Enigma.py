@@ -89,6 +89,7 @@ class reflectors():
 
 def randsetup(filename):
     global dir
+    os.makedirs(fr"{dir}\data", exist_ok=True)
     setup=[]
     for i in range(3):
         setup.append(rotors.randrotor(26))
@@ -103,6 +104,7 @@ def randsetup(filename):
 
 def readsetup(filename):
     global dir
+    os.makedirs(fr"{dir}\data", exist_ok=True)
     path=fr'{dir}\data\{filename}.txt'
     setupfile=open(path,'r')
     data=ast.literal_eval(setupfile.read())
@@ -112,6 +114,7 @@ def readsetup(filename):
 
 def originalengima():
     global dir
+    os.makedirs(fr"{dir}\data", exist_ok=True)
     filename=input('Please enter your setup file name:')
     path=fr'{dir}\data\{filename}.txt'
     print(f'Please check the path:{path}')

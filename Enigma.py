@@ -89,13 +89,13 @@ class reflectors():
 
 def randsetup(filename):
     global dir
-    os.makedirs(fr"{dir}\data", exist_ok=True)
+    os.makedirs(fr"{dir}/data", exist_ok=True)
     setup=[]
     for i in range(3):
         setup.append(rotors.randrotor(26))
     setup.append(reflectors.randreflector(26))
     setup.append(plugboards.randplugboard(26,6))
-    path=fr'{dir}\data\{filename}.txt'
+    path=fr'{dir}/data/{filename}.txt'
     setupfile=open(path,"w")
     setupfile.write(str(setup))
     setupfile.close()
@@ -104,8 +104,8 @@ def randsetup(filename):
 
 def readsetup(filename):
     global dir
-    os.makedirs(fr"{dir}\data", exist_ok=True)
-    path=fr'{dir}\data\{filename}.txt'
+    os.makedirs(fr"{dir}/data", exist_ok=True)
+    path=fr'{dir}/data/{filename}.txt'
     setupfile=open(path,'r')
     data=ast.literal_eval(setupfile.read())
     setupfile.close()
@@ -114,9 +114,9 @@ def readsetup(filename):
 
 def originalengima():
     global dir
-    os.makedirs(fr"{dir}\data", exist_ok=True)
+    os.makedirs(fr"{dir}/data", exist_ok=True)
     filename=input('Please enter your setup file name:')
-    path=fr'{dir}\data\{filename}.txt'
+    path=fr'{dir}/data/{filename}.txt'
     print(f'Please check the path:{path}')
     if not os.path.exists(path):
         print("File does not exist")
@@ -153,12 +153,12 @@ def originalengima():
                 step3=chr(97+step2)
                 step4=plugboard.pluged(step3)
                 encrypttext+=step4
-            count+=1
-            rotor1.shift()
-            if count%len_rotor==0:
-                rotor2.shift()
-            if count%(len_rotor*len_rotor)==0:
-                rotor3.shift()
+                count+=1
+                rotor1.shift()
+                if count%len_rotor==0:
+                    rotor2.shift()
+                if count%(len_rotor*len_rotor)==0:
+                    rotor3.shift()
         print('Here is encrypted text:')
         print(encrypttext)
 

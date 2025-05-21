@@ -47,8 +47,6 @@ class plugboards():
             self.plugboard[i[1]]=i[0]
     @staticmethod
     def randplugboard(n,m):
-        if n//2>13:
-            return None
         lines=[]
         nodes = [chr(j) for j in range(97, 97+n)]
         for i in range(m):
@@ -69,8 +67,6 @@ class reflectors():
         self.reflector=l
     @staticmethod
     def randreflector(n):
-        if n//2>13:
-            return None
         lines=[]
         nodes=[j for j in range(0,n)]
         for i in range(n//2):

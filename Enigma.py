@@ -4,7 +4,7 @@ import os
 dir=os.path.dirname(os.path.abspath(__file__))
 class rotors():
     def __init__(self,rotor,offset):
-        self.offset=offset
+        self.offset=offset%len(rotor)
         for i in range(offset):
             rotor.insert(0,rotor.pop())
         self.rotor=rotor

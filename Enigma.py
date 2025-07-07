@@ -131,16 +131,14 @@ def originalengima():
     else:
         setup = readsetup(filename)
         rotor1, rotor2, rotor3, reflector, plugboard = setup
-        offset3, offset2, offset1 = [ord(i.lower()) - 97 for i in
-                                     input("Please enter 3 offset,case doesn't matter(such as ABC,MEI,QAQ):")]
+        offset3, offset2, offset1 = [ord(i.lower()) - 97 for i in input("Please enter 3 offset,case doesn't matter(such as ABC,MEI,QAQ):")]
         rotor1 = Rotors(rotor1, offset1)
         rotor2 = Rotors(rotor2, offset2)
         rotor3 = Rotors(rotor3, offset3)
         reflector = Reflectors(reflector)
         plugboard = Plugboards(plugboard)
         print('Setup done!')
-        print(
-            'Please enter your text below,only lower-case english character will be encrypted,Multiline input allowed,empty row finished input:')
+        print('Please enter your text below,only lower-case english character will be encrypted,Multiline input allowed,empty row finished input:')
         lines = []
         while 1:
             line = input()

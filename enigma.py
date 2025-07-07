@@ -155,8 +155,7 @@ def originalengima():
                 encrypttext += i
             else:
                 step1 = plugboard.pluged(i)
-                step2 = rotor1.right(rotor2.right(
-                    rotor3.right(reflector.reflect(rotor3.left(rotor2.left(rotor1.left(ord(step1) - 97)))))))
+                step2 = rotor1.right(rotor2.right(rotor3.right(reflector.reflect(rotor3.left(rotor2.left(rotor1.left(ord(step1) - 97)))))))
                 while step2 < 0:
                     step2 += len_rotor
                 step3 = chr(97 + step2)
